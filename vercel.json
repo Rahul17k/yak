@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "fastapi",
+      "entrypoint": "api.main:app",
+      "functions": {
+        "api/main.py": {
+          "excludeFiles": "{frontend/**,tests/**,**/__pycache__/**,yakshagana_work/blur_robust_baseline/**,yakshagana_work/blur_robust_candidate/**,evaluate_yakshagana.py,train_yakshagana_blur.py,yakshagana_augment.py,Yakshagana_Vesha_NotYakshagana_v4.ipynb,package-lock.json}"
+        }
+      }
+    },
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
+}

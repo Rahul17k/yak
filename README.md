@@ -63,6 +63,18 @@ python -m uvicorn api.main:app --host 127.0.0.1 --port 8017
 
 Then open <http://127.0.0.1:8017>.
 
+## Deploy to Vercel
+
+The root `vercel.json` configures two services:
+
+- `app` runs the FastAPI backend from the workspace root with `api.main:app`.
+- `frontend` builds the Vite app from `frontend`.
+- Public `/api/*` requests route to `app`; all other requests route to `frontend`.
+
+The frontend uses same-origin `/api/...` requests in production, so no service binding is needed. `.python-version` selects Python 3.13 for the backend. The backend function excludes frontend and training-only artifacts while retaining the model and dataset files needed at runtime.
+
+Connect this repository to Vercel and deploy it as one project. Enable Large Functions Beta first: the standard Python function bundle limit is 500 MB and TensorFlow may exceed it. Verify the actual function bundle size in Vercel's build output. `vercel dev` can run the services together locally.
+
 ## Evaluate and test
 
 Regenerate validation-selected uncertainty and novelty thresholds, fixed reference photos, training embeddings, and held-out test metrics without training. Run this before starting the API if the evaluation artifacts are missing:
