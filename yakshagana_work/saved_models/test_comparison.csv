@@ -1,0 +1,2 @@
+Model,Params (M),Train time (min),Epochs run,Accuracy,Macro Precision,Macro Recall,Macro F1,Infer ms/img (batch),Infer ms/img (single)
+MobileNetV2,2.587462,5.295458285013835,19,0.9029126213592233,0.8845238095238095,0.7964214214214215,0.7854204195227986,29.923243750090478,335.38548999931663

@@ -1,0 +1,229 @@
+{
+  "model": "MobileNetV2",
+  "evaluation_split": "test",
+  "counts": {
+    "train": 478,
+    "validation": 103,
+    "test": 103
+  },
+  "accuracy": 0.8058252427184466,
+  "classifier_accuracy": 0.9029126213592233,
+  "validation_robustness": {
+    "calibrated_on_blur_views": true,
+    "views_per_image": 3,
+    "evaluated_images": 309,
+    "classifier_accuracy": 0.7605177993527508,
+    "app_accuracy": 0.5307443365695793,
+    "novelty_rejection_count": 61,
+    "uncertain_count": 64,
+    "accepted_accuracy": 0.8913043478260869
+  },
+  "validation_clean": {
+    "images": 103,
+    "classifier_accuracy": 0.9611650485436893,
+    "app_accuracy": 0.8543689320388349,
+    "novelty_rejection_count": 2,
+    "uncertain_count": 11
+  },
+  "synthetic_blur_stress_validation": {
+    "views_per_image": 3,
+    "evaluated_images": 309,
+    "classifier_accuracy": 0.7605177993527508,
+    "app_accuracy": 0.5307443365695793,
+    "novelty_rejection_count": 61,
+    "uncertain_count": 64
+  },
+  "uncertain_count": 19,
+  "uncertain_rate": 0.18446601941747573,
+  "synthetic_blur_stress_test": {
+    "views_per_image": 3,
+    "evaluated_images": 309,
+    "classifier_accuracy": 0.7540453074433657,
+    "app_accuracy": 0.5275080906148867,
+    "novelty_rejection_count": 47,
+    "novelty_rejection_rate": 0.15210355987055016,
+    "uncertain_count": 84,
+    "uncertain_rate": 0.27184466019417475
+  },
+  "uncertainty_thresholds": {
+    "confidence": 0.85,
+    "margin": 0.0,
+    "target_accepted_accuracy": 0.95,
+    "target_accepted_accuracy_met": false,
+    "minimum_vesha_confidence": 0.85,
+    "validation_accepted_count": 204,
+    "validation_count": 309,
+    "validation_accepted_accuracy": 0.8627450980392157
+  },
+  "novelty_screen": {
+    "method": "nearest cosine similarity to normalized training-set dense_hidden embeddings",
+    "threshold": 0.8269316391544741,
+    "validation_target_positive_acceptance_rate": 0.8,
+    "validation_positive_acceptance_rate": 0.8025889967637541,
+    "validation_count": 309,
+    "test_positive_rejection_count": 0,
+    "test_positive_rejection_rate": 0.0,
+    "training_embedding_count": 478
+  },
+  "classes": [
+    {
+      "label": "Bannadavesha",
+      "image_count": 78,
+      "train_count": 55,
+      "validation_count": 11,
+      "test_count": 12,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8
+    },
+    {
+      "label": "Mahishasura",
+      "image_count": 43,
+      "train_count": 29,
+      "validation_count": 8,
+      "test_count": 6,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    {
+      "label": "Pundarika veshsa",
+      "image_count": 246,
+      "train_count": 171,
+      "validation_count": 38,
+      "test_count": 37,
+      "precision": 1.0,
+      "recall": 0.8648648648648649,
+      "f1": 0.927536231884058
+    },
+    {
+      "label": "Raja vesha",
+      "image_count": 242,
+      "train_count": 170,
+      "validation_count": 36,
+      "test_count": 36,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "f1": 0.9565217391304348
+    },
+    {
+      "label": "Stree vesha",
+      "image_count": 52,
+      "train_count": 36,
+      "validation_count": 7,
+      "test_count": 9,
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353
+    },
+    {
+      "label": "Vidhushaka or vidhushaka",
+      "image_count": 23,
+      "train_count": 17,
+      "validation_count": 3,
+      "test_count": 3,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4
+    }
+  ],
+  "confusion_matrix": {
+    "actual_labels": [
+      "Bannadavesha",
+      "Mahishasura",
+      "Pundarika veshsa",
+      "Raja vesha",
+      "Stree vesha",
+      "Vidhushaka or vidhushaka"
+    ],
+    "predicted_labels": [
+      "Bannadavesha",
+      "Mahishasura",
+      "Pundarika veshsa",
+      "Raja vesha",
+      "Stree vesha",
+      "Vidhushaka or vidhushaka",
+      "Uncertain",
+      "Rejected as Not Yakshagana"
+    ],
+    "values": [
+      [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        32,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        33,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        8,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  "non_yakshagana": {
+    "supported": false,
+    "screen_available": true,
+    "method": "positive_only_novelty_screen",
+    "false_acceptance_rate": null,
+    "false_rejection_rate": 0.0,
+    "message": "Best-effort novelty screen calibrated only on Yakshagana validation images. No non-Yakshagana test images are available, so the false-acceptance rate is unknown; an unrelated image may still resemble the training embeddings."
+  },
+  "references": {
+    "Bannadavesha": "Bannadavesha/img158_png.rf.32a05b041ffb1e0abb74be3ae320992e - Copy (2).jpg",
+    "Mahishasura": "Mahishasura/download.jpg",
+    "Pundarika veshsa": "Pundarika veshsa/img102_png.rf.0c46f4aee4d76ed41acb09a1c2620f62 - Copy (2) - Copy.jpg",
+    "Raja vesha": "Raja vesha/devendra-shivashankara.jpg",
+    "Stree vesha": "Stree vesha/19105579_1788068878172110_6606185689605325369_n.webp",
+    "Vidhushaka or vidhushaka": "Vidhushaka or vidhushaka/download (1).jpg"
+  },
+  "confidence_notice": "Confidence does not guarantee that the prediction is correct."
+}

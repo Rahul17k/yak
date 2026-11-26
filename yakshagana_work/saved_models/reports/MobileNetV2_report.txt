@@ -1,0 +1,12 @@
+                          precision    recall  f1-score   support
+
+            Bannadavesha      0.900     0.750     0.818        12
+             Mahishasura      1.000     0.167     0.286         6
+        Pundarika veshsa      1.000     0.973     0.986        37
+              Raja vesha      0.857     1.000     0.923        36
+             Stree vesha      0.800     0.889     0.842         9
+Vidhushaka or vidhushaka      0.750     1.000     0.857         3
+
+                accuracy                          0.903       103
+               macro avg      0.885     0.796     0.785       103
+            weighted avg      0.914     0.903     0.887       103
