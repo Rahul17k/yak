@@ -73,7 +73,7 @@ The root `vercel.json` configures two services:
 
 The frontend uses same-origin `/api/...` requests in production, so no service binding is needed. `.python-version` selects Python 3.13 for the backend. The backend function excludes frontend and training-only artifacts while retaining the model and dataset files needed at runtime.
 
-Connect this repository to Vercel and deploy it as one project. Enable Large Functions Beta first: the standard Python function bundle limit is 500 MB and TensorFlow may exceed it. Verify the actual function bundle size in Vercel's build output. `vercel dev` can run the services together locally.
+Connect this repository to Vercel and deploy it as one project. The backend bundle is about 2.3 GB, primarily due to TensorFlow, so it requires Vercel Large Functions (up to 5 GB). For an existing Vercel project, enable Fluid Compute with Active CPU and set the project environment variable `VERCEL_SUPPORT_LARGE_FUNCTIONS=1` for the deployment environment, then redeploy. This setting overrides the project default; if the build still reports a 500 MB limit, verify the variable is present for the right Vercel project and environment and is not set to `0`. Check Vercel's build output for the actual bundle contents. `vercel dev` can run the services together locally.
 
 ## Evaluate and test
 
